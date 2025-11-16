@@ -8,6 +8,12 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 :root{
     --color-pink: #feecea;
     --color-white: #fff;
@@ -62,10 +68,14 @@ body {
 
 .flag__birthday .flag__left{
     transform: rotate(-10deg) translate(-20px,30px);
+    max-width: 350px;
+    height: auto;
 }
 
 .flag__birthday .flag__right{
     transform: rotate(10deg) translate(20px,30px) scaleX(-1);
+    max-width: 350px;
+    height: auto;
 }
 
 .content{
@@ -245,6 +255,12 @@ body {
     }
 }
 
+.title .hat img {
+    max-width: 130px;
+    width: 100%;
+    height: auto;
+}
+
 .date__of__birth, .name{
     display: flex;
     justify-content:space-around;
@@ -337,6 +353,7 @@ body {
 
 .content .right .image img{
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -633,6 +650,13 @@ body {
     animation: balloon1 2s infinite linear;
 }
 
+.right .balloon_one img, 
+.right .balloon_two img {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+}
+
 @keyframes balloon1{
     0%, 50%,100%{
         transform-origin: bottom right;
@@ -755,12 +779,27 @@ body {
     animation: scaleCricle 3s var(--t) forwards ease-in-out;
 }
 
+.decorate_flower--one img,
+.decorate_flower--two img,
+.decorate_flower--three img {
+    max-width: 20px;
+    width: 100%;
+    height: auto;
+}
+
 .smiley__icon{
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     animation: jump 1s infinite ease-in-out;
+}
+
+.decorate_bottom img,
+.smiley__icon img {
+    max-width: 100px;
+    width: 100%;
+    height: auto;
 }
 
 @keyframes jump{
@@ -828,6 +867,7 @@ body {
     overflow: hidden;
     border: 3px solid var(--color-black);
     margin-bottom: 20px;
+    max-width: 100%;
 }
 
 .userImg img{
@@ -1789,85 +1829,591 @@ body {
     border-radius: 0 0 10px 10px;
 }
 
-@media screen and (max-width: 992px) {
-    .content{
+/* Mobile First Responsive Design */
+@media screen and (max-width: 575px) {
+    /* Wrapper adjustments */
+    #wrapper {
+        padding: 10px;
+    }
+    
+    /* Content adjustments */
+    .content {
         flex-direction: column;
         padding-top: 1rem;
     }
     
-    .content .left, .content .right{
+    .content .left, 
+    .content .right {
         width: 100%;
         min-width: unset;
+        padding: 0;
     }
     
-    .title{
-        font-size: 2rem;
+    /* Title adjustments */
+    .title {
+        font-size: 1.5rem;
     }
     
-    .content .right .image{
-        width: 300px;
-        height: 300px;
+    .title .happy, 
+    .title .birthday {
+        text-shadow: 2px 2px var(--color-black), 
+                    -2px 2px var(--color-black), 
+                    2px -2px var(--color-black), 
+                    -2px -2px var(--color-black), 
+                    2px 4px 0 var(--color-black);
     }
     
-    .boxMail{
-        width: 90%;
+    /* Image adjustments */
+    .content .right .image {
+        width: 250px;
+        height: 250px;
+    }
+    
+    /* Circle text adjustments */
+    .text__cricle {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .text__cricle span {
+        transform-origin: 0 30px;
+        font-size: 0.5rem;
+    }
+    
+    .cricle .fa-heart {
+        transform: scale(0.7);
+    }
+    
+    /* Name adjustments */
+    .name span {
+        font-size: 1.2rem;
+    }
+    
+    /* Date of birth adjustments */
+    .date__of__birth span {
+        font-size: 0.9rem;
+        margin: 0 20px;
+    }
+    
+    .date__of__birth {
+        width: 250px !important;
+        height: 40px !important;
+    }
+    
+    /* Button adjustments */
+    #btn__letter {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .music-toggle {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Balloon adjustments */
+    .balloon_one, 
+    .balloon_two {
+        transform: scale(0.8);
+    }
+    
+    /* Hat adjustments */
+    .title .hat img {
+        width: 100px;
+    }
+    
+    .title .hat {
+        right: 20px;
+        top: -250px;
+    }
+    
+    /* Flag adjustments */
+    .flag__birthday .flag__left, 
+    .flag__birthday .flag__right {
+        width: 200px;
+    }
+    
+    /* Box mail adjustments */
+    .boxMail {
+        width: 95%;
         height: 90%;
     }
     
-    .boxMail-container{
+    .boxMail-container {
         flex-direction: column;
     }
     
-    .card1, .card2{
+    .card1, .card2 {
         width: 100%;
-        height: 50%;
+        height: auto;
+        min-height: 50%;
     }
     
-    .card1{
+    .card1 {
         border-right: none;
         border-bottom: 2px dashed var(--color-border);
     }
     
-    /* Timeline responsive */
-    .timeline:before, .coffee-timeline:before {
-        left: 30px;
+    .userImg {
+        width: 120px;
+        height: 120px;
     }
     
-    .timeline-item:nth-child(odd), .coffee-item:nth-child(odd),
-    .timeline-item:nth-child(even), .coffee-item:nth-child(even) {
-        padding-left: 70px;
-        padding-right: 0;
+    .username {
+        font-size: 1rem;
+    }
+    
+    .card1 h3 {
+        font-size: 1.5rem;
+    }
+    
+    .card2-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .card2-content h2 {
+        font-size: 1rem;
+    }
+    
+    .imageCute, .imageCute2 {
+        height: 150px;
+    }
+    
+    /* New sections adjustments */
+    .new-sections {
+        padding: 20px 10px;
+    }
+    
+    .new-sections > section {
+        padding: 20px 15px;
+        margin: 20px 0;
+    }
+    
+    .new-sections > section h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Prescription section */
+    .prescription-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .prescription-body p {
+        font-size: 0.9rem;
+    }
+    
+    .prescription-pad {
+        padding: 15px;
+    }
+    
+    /* Diagnosis section */
+    .diagnosis-title {
+        font-size: 1.3rem;
+    }
+    
+    .symptoms h3, 
+    .prognosis h3 {
+        font-size: 1.1rem;
+    }
+    
+    .symptoms li {
+        font-size: 0.9rem;
+    }
+    
+    .prognosis p {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    
+    /* Timeline adjustments */
+    .timeline:before, 
+    .coffee-timeline:before {
+        left: 20px;
+    }
+    
+    .timeline-item:nth-child(odd), 
+    .coffee-item:nth-child(odd),
+    .timeline-item:nth-child(even), 
+    .coffee-item:nth-child(even) {
+        padding-left: 50px;
+        padding-right: 15px;
         text-align: left;
     }
     
-    .timeline-icon, .coffee-icon {
-        left: 0;
+    .timeline-icon, 
+    .coffee-icon {
+        left: 5px;
+        width: 40px;
+        height: 40px;
+        margin-left: -20px;
     }
     
-    /* Gallery responsive */
-    .gallery-slider {
-        height: 300px;
+    .timeline-content, 
+    .coffee-content {
+        padding: 15px;
     }
     
-    /* Letters responsive */
+    .timeline-content h3, 
+    .coffee-content h3 {
+        font-size: 1rem;
+    }
+    
+    .timeline-content p, 
+    .coffee-content p {
+        font-size: 0.9rem;
+    }
+    
+    /* Surprise boxes */
+    .surprise-container {
+        gap: 20px;
+    }
+    
+    .surprise-box {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .surprise-front i, 
+    .surprise-back i {
+        font-size: 2.5rem;
+    }
+    
+    .surprise-front p, 
+    .surprise-back p {
+        font-size: 0.9rem;
+    }
+    
+    /* Self-care section */
+    .selfcare-card {
+        padding: 20px;
+    }
+    
+    .selfcare-card h2 {
+        font-size: 1.3rem;
+    }
+    
+    .selfcare-card p {
+        font-size: 1rem;
+    }
+    
+    .motivation-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    /* Vision board */
+    .vision-board {
+        gap: 15px;
+    }
+    
+    .vision-item {
+        width: 100px;
+        padding: 15px 10px;
+    }
+    
+    .vision-item i {
+        font-size: 1.5rem;
+    }
+    
+    .vision-item p {
+        font-size: 0.9rem;
+    }
+    
+    /* Letters section */
     .letters-container {
-        flex-direction: column;
-        align-items: center;
+        gap: 20px;
     }
     
-    /* Gifts responsive */
+    .letter {
+        width: 150px;
+        height: 200px;
+    }
+    
+    .letter-front p, 
+    .letter-content {
+        font-size: 0.8rem;
+    }
+    
+    /* Gifts section */
     .gifts-container {
-        flex-direction: column;
-        align-items: center;
+        gap: 20px;
+    }
+    
+    .gift-box {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .gift-base {
+        height: 100px;
+    }
+    
+    .gift-content {
+        font-size: 0.7rem;
+    }
+    
+    /* Confetti button */
+    .confetti-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .confetti-btn i {
+        font-size: 1rem;
+    }
+    
+    /* Decorations */
+    .decorate_star.star1 {
+        width: 15px;
+        height: 15px;
+        top: 50px;
+        left: 200px;
+    }
+    
+    .decorate_star.star2 {
+        width: 12px;
+        height: 15px;
+        top: 20px;
+        right: 200px;
+    }
+    
+    .decorate_star.star3 {
+        width: 10px;
+        height: 10px;
+        top: 200px;
+        left: 400px;
+    }
+    
+    .decorate_star.star4 {
+        width: 14px;
+        height: 14px;
+        bottom: 40px;
+        left: 20px;
+    }
+    
+    .decorate_star.star5 {
+        width: 12px;
+        height: 14px;
+        bottom: 100px;
+        left: 300px;
+    }
+    
+    .decorate_flower--one {
+        top: 180px;
+        left: 30px;
+    }
+    
+    .decorate_flower--two {
+        top: 150px;
+        left: 300px;
+    }
+    
+    .decorate_flower--three {
+        top: 100px;
+        right: 150px;
+    }
+    
+    .decorate_bottom img {
+        width: 80px;
+    }
+    
+    .smiley__icon img {
+        width: 80px;
     }
 }
 
-@media screen and (min-width: 1200px) {
+/* Tablet Styles */
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    /* Content adjustments */
+    .content {
+        flex-direction: column;
+        padding-top: 1.5rem;
+    }
+    
+    .content .left, 
+    .content .right {
+        width: 100%;
+        min-width: unset;
+        padding: 0;
+    }
+    
+    /* Title adjustments */
+    .title {
+        font-size: 2rem;
+    }
+    
+    /* Image adjustments */
+    .content .right .image {
+        width: 300px;
+        height: 300px;
+    }
+    
+    /* Circle text adjustments */
+    .text__cricle {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .text__cricle span {
+        transform-origin: 0 35px;
+        font-size: 0.6rem;
+    }
+    
+    /* Name adjustments */
+    .name span {
+        font-size: 1.4rem;
+    }
+    
+    /* Date of birth adjustments */
+    .date__of__birth span {
+        font-size: 1rem;
+    }
+    
+    /* Box mail adjustments */
+    .boxMail {
+        width: 90%;
+        height: 85%;
+    }
+    
+    /* New sections adjustments */
+    .new-sections > section h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* Timeline adjustments */
+    .timeline:before, 
+    .coffee-timeline:before {
+        left: 25px;
+    }
+    
+    .timeline-item:nth-child(odd), 
+    .coffee-item:nth-child(odd),
+    .timeline-item:nth-child(even), 
+    .coffee-item:nth-child(even) {
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+    
+    .timeline-icon, 
+    .coffee-icon {
+        width: 45px;
+        height: 45px;
+        margin-left: -22.5px;
+    }
+    
+    /* Surprise boxes */
+    .surprise-box {
+        width: 180px;
+        height: 180px;
+    }
+    
+    /* Vision board */
+    .vision-item {
+        width: 120px;
+    }
+    
+    /* Letters section */
+    .letter {
+        width: 180px;
+        height: 230px;
+    }
+    
+    /* Gifts section */
+    .gift-box {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .gift-base {
+        height: 110px;
+    }
+}
+
+/* Small Desktop Styles */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    /* Wrapper adjustments */
+    #wrapper {
+        max-width: 900px;
+    }
+    
+    /* Content adjustments */
+    .content .left {
+        width: 45%;
+        min-width: 350px;
+    }
+    
+    .content .right {
+        width: 55%;
+        min-width: 400px;
+    }
+    
+    /* Image adjustments */
+    .content .right .image {
+        width: 350px;
+        height: 350px;
+    }
+    
+    /* Circle text adjustments */
+    .text__cricle {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .text__cricle span {
+        transform-origin: 0 40px;
+        font-size: 0.65rem;
+    }
+    
+    /* Box mail adjustments */
+    .boxMail {
+        width: 85%;
+        height: 80%;
+    }
+    
+    /* New sections adjustments */
+    .new-sections {
+        max-width: 800px;
+    }
+}
+
+/* Large Desktop Styles */
+@media screen and (min-width: 1024px) {
+    /* Wrapper adjustments */
+    #wrapper {
+        max-width: 1200px;
+        padding: 30px;
+    }
+    
+    /* Content adjustments */
+    .content {
+        padding-top: 3rem;
+        justify-content: space-between;
+    }
+    
+    .content .left {
+        width: 40%;
+        min-width: 400px;
+        padding-right: 20px;
+    }
+    
+    .content .right {
+        width: 60%;
+        min-width: 500px;
+        padding-left: 20px;
+    }
+    
+    /* Title adjustments */
+    .title {
+        font-size: 3rem;
+    }
+    
+    /* Image adjustments */
     .content .right .image {
         width: 450px;
         height: 450px;
     }
     
+    /* Circle text adjustments */
     .text__cricle {
         width: 120px;
         height: 120px;
@@ -1878,17 +2424,17 @@ body {
         font-size: 0.8rem;
     }
     
-    .countdown-item {
-        min-width: 100px;
-        padding: 20px;
+    /* Box mail adjustments */
+    .boxMail {
+        width: 80%;
+        height: 80%;
+        max-width: 800px;
     }
     
-    .countdown-item span {
-        font-size: 2.5rem;
-    }
-    
-    .countdown-item p {
-        font-size: 1.2rem;
+    /* New sections adjustments */
+    .new-sections {
+        max-width: 1000px;
+        margin-top: 30px;
     }
     
     .new-sections > section {
@@ -1898,139 +2444,133 @@ body {
     .new-sections > section h2 {
         font-size: 2.5rem;
     }
-}
-
-@media screen and (max-width: 768px) {
-    .title{
-        font-size: 1.5rem;
+    
+    /* Timeline adjustments */
+    .timeline:before, 
+    .coffee-timeline:before {
+        left: 50%;
+        margin-left: -2px;
     }
     
-    .content .right .image{
-        width: 250px;
-        height: 250px;
+    .timeline-item:nth-child(odd), 
+    .coffee-item:nth-child(odd) {
+        padding-right: calc(50% + 30px);
+        text-align: right;
+        padding-left: 0;
     }
     
-    .text__cricle{
-        width: 80px;
-        height: 80px;
+    .timeline-item:nth-child(even), 
+    .coffee-item:nth-child(even) {
+        padding-left: calc(50% + 30px);
+        text-align: left;
+        padding-right: 0;
     }
     
-    .text__cricle span{
-        transform-origin: 0 35px;
-        font-size: 0.5rem;
+    .timeline-icon, 
+    .coffee-icon {
+        left: 50%;
+        margin-left: -25px;
     }
     
-    .name span{
-        font-size: 1.2rem;
+    /* Surprise boxes */
+    .surprise-box {
+        width: 220px;
+        height: 220px;
     }
     
-    .date__of__birth span{
-        font-size: 1rem;
-    }
-    
-    .new-sections > section {
-        padding: 20px 15px;
-    }
-    
-    .new-sections > section h2 {
-        font-size: 1.5rem;
-    }
-    
-    .countdown-container {
-        flex-wrap: wrap;
-    }
-    
-    .countdown-item {
-        min-width: 60px;
-        padding: 8px;
-    }
-    
-    .countdown-item span {
-        font-size: 1.2rem;
-    }
-    
+    /* Vision board */
     .vision-board {
-        gap: 15px;
+        gap: 30px;
     }
     
     .vision-item {
-        width: 120px;
-        padding: 15px;
+        width: 150px;
     }
     
-    .vision-item i {
-        font-size: 2rem;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .title{
-        font-size: 1.2rem;
-    }
-    
-    .content .right .image{
+    /* Letters section */
+    .letter {
         width: 200px;
-        height: 200px;
-    }
-    
-    .text__cricle{
-        width: 60px;
-        height: 60px;
-    }
-    
-    .text__cricle span{
-        transform-origin: 0 25px;
-        font-size: 0.4rem;
-    }
-    
-    .name span{
-        font-size: 1rem;
-    }
-    
-    .date__of__birth span{
-        font-size: 0.8rem;
-    }
-    
-    .boxMail{
-        height: 95%;
-    }
-    
-    .new-sections {
-        padding: 30px 10px;
-    }
-    
-    .new-sections > section {
-        margin: 20px 0;
-        padding: 15px 10px;
-    }
-    
-    .new-sections > section h2 {
-        font-size: 1.3rem;
-    }
-    
-    .timeline-content, .coffee-content {
-        padding: 15px;
-    }
-    
-    .timeline-content h3, .coffee-content h3 {
-        font-size: 1.1rem;
-    }
-    
-    .gallery-slider {
         height: 250px;
     }
     
-    .reason-item {
-        font-size: 1.5rem;
-        padding: 15px;
+    /* Gifts section */
+    .gift-box {
+        width: 160px;
+        height: 160px;
     }
     
-    .surprise-container {
-        gap: 20px;
+    .gift-base {
+        height: 130px;
+    }
+}
+
+/* Extra Large Screens */
+@media screen and (min-width: 1200px) {
+    /* Wrapper adjustments */
+    #wrapper {
+        max-width: 1400px;
     }
     
-    .surprise-box {
-        width: 150px;
-        height: 150px;
+    /* Content adjustments */
+    .content .left {
+        min-width: 450px;
+    }
+    
+    .content .right {
+        min-width: 550px;
+    }
+    
+    /* Image adjustments */
+    .content .right .image {
+        width: 500px;
+        height: 500px;
+    }
+    
+    /* Circle text adjustments */
+    .text__cricle {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .text__cricle span {
+        transform-origin: 0 60px;
+        font-size: 0.9rem;
+    }
+    
+    /* Box mail adjustments */
+    .boxMail {
+        max-width: 900px;
+    }
+    
+    /* New sections adjustments */
+    .new-sections {
+        max-width: 1200px;
+    }
+    
+    .new-sections > section {
+        padding: 50px;
+    }
+}
+
+/* Ultra Wide Screens */
+@media screen and (min-width: 1400px) {
+    /* Wrapper adjustments */
+    #wrapper {
+        max-width: 1600px;
+    }
+    
+    /* Content adjustments */
+    .content .left {
+        min-width: 500px;
+    }
+    
+    .content .right {
+        min-width: 600px;
+    }
+    
+    /* Image adjustments */
+    .content .right .image {
+        width: 550px;
+        height: 550px;
     }
 }
