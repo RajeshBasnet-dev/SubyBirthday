@@ -30,6 +30,7 @@ img {
 
 html{
     height: 100%;
+    overflow-y: auto;
 }
 
 body {
@@ -39,6 +40,7 @@ body {
     padding: 0;
     height: 100%;
     background-image:linear-gradient(var(--color-pink), var(--color-pink));
+    overflow-y: auto;
 }
 
 #wrapper{
@@ -48,6 +50,7 @@ body {
     min-height:100vh;
     background-size:80px 80px;
     overflow-x: hidden;
+    overflow-y: auto;
     z-index: 1;
     padding: 20px;
     margin: 0 auto;
