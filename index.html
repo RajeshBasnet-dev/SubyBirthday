@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Happy Birthday Website 2.0 | Aoudumber Bade">
+    <meta name="github" content="https://github.com/Aoudumber-Bade">
+    <title>PeachyPie Birthday</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+    
+    <!-- Audio Player -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div id="wrapper">
+        <!-- Confetti Control Button -->
+        <button id="confettiBtn" class="confetti-btn">
+            <i class="fas fa-sparkles"></i>
+            <span>Make it Rain Confetti!</span>
+        </button>
+        
+        <div class="flag__birthday">
+            <img src="./images/1.png" alt="" width="350" class="flag__left">
+            <img src="./images/1.png" alt="" width="350" class="flag__right">
+        </div>
+        <div class="content">
+            <div class="left">
+                <div class="title">
+                    <h1 class="happy">
+                        <span style="--t: 4s;">H</span>
+                        <span style="--t: 4.2s;">a</span>
+                        <span style="--t: 4.4s;">p</span>
+                        <span style="--t: 4.6s;">p</span>
+                        <span style="--t: 4.8s;">y</span>
+                    </h1>
+                    <h1 class="birthday">
+                        <span style="--t: 5s;">B</span>
+                        <span style="--t: 5.2s;">i</span>
+                        <span style="--t: 5.4s;">r</span>
+                        <span style="--t: 5.6s;">t</span>
+                        <span style="--t: 5.8s;">h</span>
+                        <span style="--t: 6s;">d</span>
+                        <span style="--t: 6.2s;">a</span>
+                        <span style="--t: 6.4s;">y</span>
+                    </h1>
+                    <div class="hat">
+                        <img src="./images/hat.png" alt="" width="130">
+                    </div>
+                </div>
+                <div class="date__of__birth">
+                    <span></span>
+                </div>
+                <div class="btn">
+                    <button id="btn__letter">
+                        <div class="mail">
+                            Click Here Suby
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                    </button>
+                    
+                    <!-- Music Toggle Button -->
+                    <button id="musicToggle" class="music-toggle">
+                        <i class="fas fa-music"></i>
+                        <i class="fas fa-volume-mute" style="display:none;"></i>
+                    </button>
+                </div>
+                
+                <!-- Countdown Timer - Removed as per request -->
+            </div>
+            <div class="right">
+                <div class="box__account">
+                    <div class="image">
+                        <img src="./images/unnamed.png" alt="">
+                        <!-- Medical Elements -->
+                        <div class="medical-elements">
+                            <div class="beating-heart"></div>
+                            <div class="stethoscope"></div>
+                            <div class="caduceus"></div>
+                        </div>
+                        <!-- Coffee Elements -->
+                        <div class="coffee-elements">
+                            <div class="coffee-cup"></div>
+                            <div class="steam steam1"></div>
+                            <div class="steam steam2"></div>
+                            <div class="steam steam3"></div>
+                        </div>
+                    </div>
+                    <div class="name">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Dear Suby</span>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="balloon_one">
+                        <img width="100px" src="./images/balloon1.png" alt="">
+                    </div>
+                    <div class="balloon_two">
+                        <img width="100px" src="./images/balloon2.png" alt="">
+                    </div>
+                </div>
+                <div class="cricle">
+                    <div class="text__cricle">
+                        <span style="--i: 1;">h</span>
+                        <span style="--i: 2;">a</span>
+                        <span style="--i: 3;">p</span>
+                        <span style="--i: 4;">p</span>
+                        <span style="--i: 5;">y</span>
+                        <span style="--i: 6;">-</span>
+                        <span style="--i: 7;">b</span>
+                        <span style="--i: 8;">i</span>
+                        <span style="--i: 9;">r</span>
+                        <span style="--i: 10;">t</span>
+                        <span style="--i: 11;">h</span>
+                        <span style="--i: 12;">d</span>
+                        <span style="--i: 13;">a</span>
+                        <span style="--i: 14;">y</span>
+                        <span style="--i: 15;">-</span>
+                    </div>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- New Sections -->
+        <div class="new-sections">
+            <!-- Prescription for Love -->
+            <section class="prescription-section">
+                <div class="prescription-pad">
+                    <div class="prescription-header">
+                        <h2>Prescription for Love</h2>
+                        <div class="doctor-info">
+                            <p>Dr. My Heart</p>
+                            <p>Chief of Romance Department</p>
+                        </div>
+                    </div>
+                    <div class="prescription-body">
+                        <p><strong>Patient:</strong> Suby "Strong Coffee" PeachyPie</p>
+                        <p><strong>Date:</strong> <span id="current-date"></span></p>
+                        <div class="prescription-content">
+                            <p><strong>Rx:</strong></p>
+                            <p>1. Unlimited doses of happiness</p>
+                            <p>2. Daily servings of love and affection</p>
+                            <p>3. Weekly adventures together</p>
+                            <p>4. Monthly celebrations of your achievements</p>
+                            <p>5. Yearly anniversaries to cherish forever</p>
+                            <br>
+                            <p><strong>Directions:</strong> Take with a smile and enjoy every moment</p>
+                            <p><strong>Refills:</strong> Infinite</p>
+                        </div>
+                        <div class="signature">
+                            <p>Dr. Signature ___________________</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Diagnosis Section -->
+            <section class="diagnosis-section">
+                <div class="diagnosis-card">
+                    <h2>Medical Diagnosis</h2>
+                    <div class="diagnosis-content">
+                        <p class="diagnosis-title">Diagnosis: Perfectly Loved Syndrome</p>
+                        <div class="symptoms">
+                            <h3>Symptoms:</h3>
+                            <ul>
+                                <li>Constant smiling</li>
+                                <li>Heart palpitations in my presence</li>
+                                <li>Inability to resist my terrible jokes</li>
+                                <li>Uncontrollable urge to share everything with me</li>
+                                <li>Feeling butterflies when we text</li>
+                                <li>Missing me during long study sessions</li>
+                            </ul>
+                        </div>
+                        <div class="prognosis">
+                            <h3>Prognosis:</h3>
+                            <p>Excellent! This condition has no cure and only improves with time. 
+                            Patient is advised to continue treatment with daily doses of affection.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Medical Journey Timeline -->
+            <section class="timeline-section">
+                <h2>Medical School Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-book-medical"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>First Year</h3>
+                            <p>Anatomy & Physiology - Survived the toughest year</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-vial"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Second Year</h3>
+                            <p>Biochemistry & Pathology - Mastered the molecular world</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Third Year</h3>
+                            <p>Clinical Rotations - Became a real doctor in training</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>Fourth Year</h3>
+                            <p>Internship & Residency Prep - Ready to save lives</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Brewing Our Love Story -->
+            <section class="brewing-section">
+                <h2>Brewing Our Love Story</h2>
+                <div class="coffee-timeline">
+                    <div class="coffee-item">
+                        <div class="coffee-icon">
+                            <div class="coffee-bean"></div>
+                        </div>
+                        <div class="coffee-content">
+                            <h3>Our First Meeting</h3>
+                            <p>Like the perfect blend of coffee beans, we complemented each other perfectly</p>
+                        </div>
+                    </div>
+                    <div class="coffee-item">
+                        <div class="coffee-icon">
+                            <div class="coffee-grind"></div>
+                        </div>
+                        <div class="coffee-content">
+                            <h3>Getting to Know Each Other</h3>
+                            <p>Just like grinding beans releases aroma, getting closer revealed your amazing qualities</p>
+                        </div>
+                    </div>
+                    <div class="coffee-item">
+                        <div class="coffee-icon">
+                            <div class="coffee-brew"></div>
+                        </div>
+                        <div class="coffee-content">
+                            <h3>Falling in Love</h3>
+                            <p>Like a perfect brew, our love developed slowly but surely into something beautiful</p>
+                        </div>
+                    </div>
+                    <div class="coffee-item">
+                        <div class="coffee-icon">
+                            <div class="coffee-sip"></div>
+                        </div>
+                        <div class="coffee-content">
+                            <h3>Today and Beyond</h3>
+                            <p>Every sip of our relationship is more precious than the last</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Photo Gallery - Removed as per request -->
+            
+            <!-- Reasons I Love You -->
+            <section class="reasons-section">
+                <h2>Reasons I Love You</h2>
+                <div class="reasons-container">
+                    <div class="reason-item" id="reason1">
+                        <p>You're my strong coffee that keeps me energized through life</p>
+                    </div>
+                    <div class="reason-item" id="reason2">
+                        <p>Your dedication to saving lives inspires me every day</p>
+                    </div>
+                    <div class="reason-item" id="reason3">
+                        <p>Your beautiful smile lights up even my darkest days</p>
+                    </div>
+                    <div class="reason-item" id="reason4">
+                        <p>Your intelligence makes me fall for you more each day</p>
+                    </div>
+                    <div class="reason-item" id="reason5">
+                        <p>Your caring nature shows in everything you do</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Interactive Surprises -->
+            <section class="surprise-section">
+                <h2>Click for Sweet Surprises</h2>
+                <div class="surprise-container">
+                    <div class="surprise-box" id="surprise1">
+                        <div class="surprise-front">
+                            <i class="fas fa-gift"></i>
+                            <p>Click Me!</p>
+                        </div>
+                        <div class="surprise-back">
+                            <p>You make my heart beat faster than a patient in the ER!</p>
+                        </div>
+                    </div>
+                    <div class="surprise-box" id="surprise2">
+                        <div class="surprise-front">
+                            <i class="fas fa-heart"></i>
+                            <p>Hover Over Me!</p>
+                        </div>
+                        <div class="surprise-back">
+                            <p>My Dearest Suby,<br><br>You're not just the medicine my heart needs—you're the cure for every worry, the treatment for every sad moment, and the therapy that makes everything better.<br><br>Call me anytime: 9749782458<br><br>With all my love,<br>Your Devoted ❤️</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Self-Care Reminder -->
+            <section class="selfcare-section">
+                <div class="selfcare-card">
+                    <h2>Self-Care Reminder</h2>
+                    <p>Doctor's Orders: Take breaks, stay hydrated, and remember to breathe. 
+                    You're doing amazing, and I'm proud of every step you take toward your dreams.</p>
+                    <button id="motivationBtn" class="motivation-button">Need Motivation?</button>
+                </div>
+            </section>
+            
+            <!-- Vision Board -->
+            <section class="vision-section">
+                <h2>Our Future Dreams</h2>
+                <div class="vision-board">
+                    <div class="vision-item">
+                        <i class="fas fa-home"></i>
+                        <p>Our Dream Home</p>
+                    </div>
+                    <div class="vision-item">
+                        <i class="fas fa-ring"></i>
+                        <p>Our Wedding Day</p>
+                    </div>
+                    <div class="vision-item">
+                        <i class="fas fa-baby"></i>
+                        <p>Starting a Family</p>
+                    </div>
+                    <div class="vision-item">
+                        <i class="fas fa-globe-americas"></i>
+                        <p>Travel the World</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sealed Letters -->
+            <section class="letters-section">
+                <h2>Open When You Need Motivation</h2>
+                <div class="letters-container">
+                    <div class="letter closed" data-letter="1">
+                        <div class="letter-front">
+                            <p>Open When Studying</p>
+                        </div>
+                        <div class="letter-content">
+                            <p>Remember, every hour you study brings you closer to your dream of saving lives. 
+                            You're not just studying for exams; you're preparing to be someone's hero. 
+                            I believe in you completely!</p>
+                        </div>
+                    </div>
+                    <div class="letter closed" data-letter="2">
+                        <div class="letter-front">
+                            <p>Open When Tired</p>
+                        </div>
+                        <div class="letter-content">
+                            <p>You've worked so hard today. Rest now and know that your dedication doesn't go unnoticed. 
+                            Tomorrow is a new day full of possibilities. Sleep well, my strong coffee.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Virtual Gift Boxes -->
+            <section class="gifts-section">
+                <h2>Special Gifts for You</h2>
+                <div class="gifts-container">
+                    <div class="gift-box" id="gift1">
+                        <div class="gift-lid"></div>
+                        <div class="gift-base">
+                            <div class="gift-content">
+                                <p>A day where I do all the chores so you can study peacefully</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gift-box" id="gift2">
+                        <div class="gift-lid"></div>
+                        <div class="gift-base">
+                            <div class="gift-content">
+                                <p>A surprise weekend getaway when you finish residency</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gift-box" id="gift3">
+                        <div class="gift-lid"></div>
+                        <div class="gift-base">
+                            <div class="gift-content">
+                                <p>My love across the miles: Nepal → USA</p>
+                                <div class="love-map">
+                                    <div class="location nepal">🇳🇵</div>
+                                    <div class="love-path"></div>
+                                    <div class="location usa">🇺🇸</div>
+                                </div>
+                                <p>No distance can separate our hearts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="decorate_star star1" style="--t: 15s;"></div>
+        <div class="decorate_star star2" style="--t: 15.2s;"></div>
+        <div class="decorate_star star3" style="--t: 15.4s;"></div>
+        <div class="decorate_star star4" style="--t: 15.6s;"></div>
+        <div class="decorate_star star5" style="--t: 15.8s;"></div>
+        <div class="decorate_flower--one" style="--t: 15s;">
+            <img width="20" src="./images/decorate_flower.png" alt="">
+        </div>
+        <div class="decorate_flower--two" style="--t: 15.3s;">
+            <img width="20" src="./images/decorate_flower.png" alt="">
+        </div>
+        <div class="decorate_flower--three" style="--t: 15.6s;">
+            <img width="20" src="./images/decorate_flower.png" alt="">
+        </div>
+        <div class="decorate_bottom">
+            <img src="./images/decorate.png" alt="" width="100">
+        </div>
+        <div class="smiley__icon">
+            <img src="./images/smiley_icon.png" alt="" width="100">
+        </div>
+
+        <div class="boxMail">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="boxMail-container">
+                <div class="card1">
+                    <div class="userImg">
+                        <img src="./images/unnamed.png" alt="">
+                    </div>
+                    <h4 class="username">To: PeachyPie 💖<span class="underline"></span></h4>
+                    <h3>Happy Birthday</h3>
+                    <div class="imageCute">
+                        <img src="./images/mewmew.gif" alt="">
+                    </div>
+                </div>
+                <div class="card2">
+                    <div class="card2-content">
+                        <h3>To You!</h3>
+                        <h2>Happy Birthday my Strong Coffee
+
+The day you came into my life I didn't realize how much you would grow to mean to me. Day by day you became closer to my heart in a way I never expected. You are not just my girlfriend you are my confidant my inspiration my PeachyPie.
+
+I wish I could take away every burden you carry and make your life lighter. But know that I am always here for you. You can share anything with me every thought every secret every dream because I will always listen and care for you completely.
+
+This year I hope all your dreams come true. I hope your smile shines brighter than ever and that your heart always feels the love and joy you bring to the world.
+
+Happy Birthday my love. I am so grateful for you for us and for every single moment we share together.
+                        </h2>
+                        <div class="imageCute2">
+                            <img src="./images/love.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hidden Audio Message Button - Removed as per request -->
+    </div>
+</body>
+<script>
+    // Existing script code
+    let datetxt = "20 Nov";
+    let datatxtletter = "My love. You are a very special girl. I always silently thank you for coming into my life. Today, I wish you all the best, lots of health, and lots of joy. I always hope we will celebrate many more birthdays like this together. Happy birthday to you.💕";
+    let titleLetter = "To you";
+    let charArrDate = datetxt.split('');
+    let charArrDateLetter = datatxtletter.split('');
+    let charArrTitle = titleLetter.split('');
+    let currentIndex = 0;
+    let currentIndexLetter = 0;
+    let currentIndexTitle = 0;
+    let date__of__birth = document.querySelector(".date__of__birth span");
+    let text__letter = document.querySelector(".text__letter p");
+    
+    setTimeout(function () {
+        timeDatetxt = setInterval(function () {
+            if (currentIndex < charArrDate.length) {
+                date__of__birth.textContent += charArrDate[currentIndex];
+                currentIndex++;
+            }
+            else {
+                let i = document.createElement("i");
+                i.className = "fa-solid fa-star"
+                document.querySelector(".date__of__birth").prepend(i)
+                document.querySelector(".date__of__birth").appendChild(i.cloneNode(true))
+                clearInterval(timeDatetxt)
+            }
+        }, 100)
+    }, 12000)
+
+    var intervalContent;
+    var intervalTitle;
+    
+    $("#btn__letter").on("click", function () {
+        $(".box__letter").slideDown()
+        setTimeout(function () {
+            $(".letter__border").slideDown();
+        }, 1000)
+        setTimeout(function () {
+            intervalTitle = setInterval(function () {
+                if (currentIndexTitle < charArrTitle.length) {
+                    document.querySelector(".title__letter").textContent += charArrTitle[currentIndexTitle];
+                    let i = document.createElement("i");
+                    i.className = "fa-solid fa-heart"
+                    document.querySelector(".title__letter").appendChild(i)
+                    currentIndexTitle++;
+                }
+                else {
+                    clearInterval(intervalTitle)
+                }
+            }, 100)
+        }, 2000)
+        setTimeout(function () {
+            document.querySelector("#heart__letter").classList.add("animationOp");
+            document.querySelector(".love__img").classList.add("animationOp");
+            document.querySelector("#mewmew").classList.add("animationOp");
+        }, 2800)
+        setTimeout(function () {
+            document.querySelectorAll(".heart").forEach((item) => {
+                item.classList.add("animation")
+            })
+        }, 3500)
+        setTimeout(function () {
+            intervalContent = setInterval(function () {
+                if (currentIndexLetter < charArrDateLetter.length) {
+                    text__letter.textContent += charArrDateLetter[currentIndexLetter];
+                    currentIndexLetter++;
+                }
+                else {
+                    clearInterval(intervalContent)
+                }
+            }, 50)
+        }, 6000)
+    })
+    
+    $(".close").on("click", function () {
+        clearInterval(intervalContent)
+        document.querySelector(".title__letter").textContent = "";
+        text__letter.textContent = "";
+        currentIndexLetter = 0
+        currentIndexTitle = 0
+        document.querySelector("#heart__letter").classList.remove("animationOp");
+        document.querySelector(".love__img").classList.remove("animationOp");
+        document.querySelector("#mewmew").classList.remove("animationOp");
+        document.querySelectorAll(".heart").forEach((item) => {
+            item.classList.remove("animation")
+        })
+        $(".box__letter").slideUp();
+        $(".letter__border").slideUp();
+    })
+
+    let mailBox = document.querySelector('.mail')
+    let boxmail = document.querySelector('.boxMail')
+    var close = document.querySelector('.fa-xmark')
+    
+    mailBox.onclick = function () {
+        mailBox.classList.toggle('active')
+        boxmail.classList.add('active')
+    }
+
+    close.addEventListener('click', function () {
+        boxmail.classList.remove('active')
+    })
+    
+    // All JavaScript functionality is now in script.js
+</script>
+</html>
