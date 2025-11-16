@@ -6,8 +6,9 @@ function createConfetti(duration = 10000) { // Default 10 seconds
     if (!canvas) return;
     
     const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // Set canvas to full viewport size
+    canvas.width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    canvas.height = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
     
     const confettiPieces = [];
     const colors = ['#FF7882', '#feecea', '#DACCBF', '#fff8e4', '#FFDAB9'];
@@ -248,10 +249,16 @@ function setupMotivationButton() {
 function handleResize() {
     const canvas = document.getElementById('confettiCanvas');
     if (canvas) {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        // Set canvas to full viewport size
+        canvas.width = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+        canvas.height = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
     }
 }
+
+// Ensure proper sizing on load
+window.addEventListener('load', function() {
+    handleResize();
+});
 
 // Initialize all features when the page loads
 document.addEventListener('DOMContentLoaded', function() {

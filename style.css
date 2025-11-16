@@ -12,6 +12,7 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 :root{
@@ -50,7 +51,11 @@ body {
     z-index: 1;
     padding: 20px;
     margin: 0 auto;
-    max-width: 1400px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .flag__birthday{
@@ -58,6 +63,9 @@ body {
     justify-content: space-between;
     transform: translateY(-200px);
     animation: translateYFlag 1.5s 2s forwards;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 @keyframes translateYFlag{
@@ -70,12 +78,16 @@ body {
     transform: rotate(-10deg) translate(-20px,30px);
     max-width: 350px;
     height: auto;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .flag__birthday .flag__right{
     transform: rotate(10deg) translate(20px,30px) scaleX(-1);
     max-width: 350px;
     height: auto;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .content{
@@ -85,7 +97,9 @@ body {
     padding-top: 3rem;
     max-width: 1200px;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
 }
 
 .content .left, .content .right{
@@ -94,6 +108,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-self: flex-start;
 }
 
 .content .left{
@@ -114,11 +129,14 @@ body {
     display: flex;
     gap: 20px;
     align-items: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 #btn__letter{
     position: relative;
-    margin-top: 30px;
+    margin: 30px auto 0;
     background-color: var(--color-text-pink);
     outline: none;
     padding: 5px 15px;
@@ -133,6 +151,7 @@ body {
     z-index: 2;
     transform: scale(1);
     transition: all .5s ease-in-out;
+    box-sizing: border-box;
 }
 
 #btn__letter:active{
@@ -155,7 +174,7 @@ body {
 }
 
 .music-toggle {
-    margin-top: 30px;
+    margin: 30px auto 0;
     background-color: var(--color-medical-blue);
     outline: none;
     padding: 5px 15px;
@@ -169,6 +188,7 @@ body {
     cursor: pointer;
     z-index: 2;
     transition: all .5s ease-in-out;
+    box-sizing: border-box;
 }
 
 .music-toggle:hover {
@@ -197,6 +217,8 @@ body {
     font-size: 3rem;
     flex-direction: column;
     perspective: 1000px;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .title .happy, .title .birthday{
@@ -209,6 +231,8 @@ body {
     font-weight: bold;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .title .happy{
@@ -241,6 +265,7 @@ body {
     transform: rotate(-40deg);
     z-index: -1;
     animation: topHat 4s 7s forwards ease;
+    box-sizing: border-box;
 }
 
 @keyframes topHat{
@@ -267,9 +292,9 @@ body {
     align-items: center;
     background-color: var(--color-text-pink);
     border-radius: 50px;
-    margin-top: 20px;
+    margin: 20px auto 0;
     font-family: "Sriracha", cursive;
-    
+    box-sizing: border-box;
 }
 
 .date__of__birth{
@@ -281,6 +306,8 @@ body {
     visibility: hidden;
     width: 0px;
     animation: dateOfBirth 5s 9s forwards;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 @keyframes dateOfBirth{
@@ -313,6 +340,10 @@ body {
     bottom: -20px;
     border: 3px solid var(--color-black);
     font-family: 'Dancing Script', cursive;
+    box-sizing: border-box;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .date__of__birth span, .name span{
@@ -332,6 +363,8 @@ body {
     position: relative;
     transform: translateY(700px);
     animation: topBoxImage 8s 7s forwards ease-in;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 @keyframes topBoxImage{
@@ -348,13 +381,16 @@ body {
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
     border: 6px solid var(--color-black);
+    margin: 0 auto;
 }
 
 .content .right .image img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    margin: 0 auto;
 }
 
 /* Medical Elements */
@@ -365,6 +401,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    box-sizing: border-box;
 }
 
 .beating-heart {
@@ -493,6 +530,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    box-sizing: border-box;
 }
 
 .coffee-cup {
@@ -561,6 +599,7 @@ body {
     align-items: center;
     transform: scale(0);
     animation: scaleCricle 3s 15s forwards ease-in-out;
+    box-sizing: border-box;
 }
 
 @keyframes scaleCricle {
@@ -588,6 +627,8 @@ body {
     justify-content: center;
     align-items: center;
     animation: rotateCricle 5s linear infinite;
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 @keyframes rotateCricle{
@@ -606,6 +647,7 @@ body {
     font-family: "Sriracha", cursive;
     text-transform: uppercase;
     font-size: 0.7rem;
+    box-sizing: border-box;
 }
 
 .fa-heart{
@@ -648,6 +690,7 @@ body {
     top: -70px;
     left: -70px;
     animation: balloon1 2s infinite linear;
+    box-sizing: border-box;
 }
 
 .right .balloon_one img, 
@@ -679,6 +722,7 @@ body {
     z-index: -1;
     transform: rotate(10deg);
     animation: balloon2 2s infinite linear;
+    box-sizing: border-box;
 }
 
 @keyframes balloon2 {
@@ -703,6 +747,7 @@ body {
     clip-path: polygon(0 50%, 35% 35%, 50% 0, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%);
     animation: scaleCricle 3s var(--t) forwards, 
             scaleStar 2s 16s infinite ease-in-out;
+    box-sizing: border-box;
 }
 
 .decorate_star.star1{
@@ -753,6 +798,7 @@ body {
     position: absolute;
     right: 0;
     bottom: -10px;
+    box-sizing: border-box;
 }
 
 .decorate_flower--one{
@@ -761,6 +807,7 @@ body {
     left: 50px;
     transform: scale(0);
     animation: scaleCricle 3s var(--t) forwards ease-in-out;
+    box-sizing: border-box;
 }
 
 .decorate_flower--two{
@@ -769,6 +816,7 @@ body {
     left: 540px;
     transform: scale(0);
     animation: scaleCricle 3s var(--t) forwards ease-in-out;
+    box-sizing: border-box;
 }
 
 .decorate_flower--three{
@@ -777,6 +825,7 @@ body {
     right: 235px;
     transform: scale(0);
     animation: scaleCricle 3s var(--t) forwards ease-in-out;
+    box-sizing: border-box;
 }
 
 .decorate_flower--one img,
@@ -793,6 +842,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     animation: jump 1s infinite ease-in-out;
+    box-sizing: border-box;
 }
 
 .decorate_bottom img,
@@ -825,6 +875,9 @@ body {
     z-index: 100;
     transition: all .5s ease-in-out;
     overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .boxMail.active{
@@ -846,6 +899,9 @@ body {
     height: 100%;
     display: flex;
     position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 .card1{
@@ -858,6 +914,8 @@ body {
     align-items: center;
     padding: 20px;
     border-right: 2px dashed var(--color-border);
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .userImg{
@@ -866,14 +924,18 @@ body {
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid var(--color-black);
-    margin-bottom: 20px;
+    margin: 0 auto 20px;
     max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .userImg img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    margin: 0 auto;
 }
 
 .username{
@@ -917,9 +979,23 @@ body {
     width: 100%;
     height: 200px;
     margin-top: 20px;
+    max-width: 100%;
 }
 
 .imageCute img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.imageCute2{
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.imageCute2 img{
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -931,6 +1007,8 @@ body {
     height: 100%;
     padding: 20px;
     overflow-y: auto;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .card2-content h3{
@@ -983,8 +1061,8 @@ body {
     flex-direction: column;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 30px;
+    margin: 30px auto 0;
+    box-sizing: border-box;
 }
 
 .new-sections > section {
@@ -996,6 +1074,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border: 3px solid var(--color-border);
+    box-sizing: border-box;
 }
 
 .new-sections > section h2 {
@@ -1739,6 +1818,8 @@ body {
     z-index: 100;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .confetti-btn:hover {
@@ -1760,6 +1841,7 @@ body {
     height: 100%;
     pointer-events: none;
     z-index: 1000;
+    max-width: 100%;
 }
 
 /* Coffee Timeline Specific Styles */
@@ -1830,747 +1912,153 @@ body {
 }
 
 /* Mobile First Responsive Design */
+/* Removed mobile-specific styles to ensure consistency across all devices */
 @media screen and (max-width: 575px) {
-    /* Wrapper adjustments */
+    /* Keep consistent layout across all devices */
     #wrapper {
-        padding: 10px;
-    }
-    
-    /* Content adjustments */
-    .content {
-        flex-direction: column;
-        padding-top: 1rem;
-    }
-    
-    .content .left, 
-    .content .right {
-        width: 100%;
-        min-width: unset;
-        padding: 0;
-    }
-    
-    /* Title adjustments */
-    .title {
-        font-size: 1.5rem;
-    }
-    
-    .title .happy, 
-    .title .birthday {
-        text-shadow: 2px 2px var(--color-black), 
-                    -2px 2px var(--color-black), 
-                    2px -2px var(--color-black), 
-                    -2px -2px var(--color-black), 
-                    2px 4px 0 var(--color-black);
-    }
-    
-    /* Image adjustments */
-    .content .right .image {
-        width: 250px;
-        height: 250px;
-    }
-    
-    /* Circle text adjustments */
-    .text__cricle {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .text__cricle span {
-        transform-origin: 0 30px;
-        font-size: 0.5rem;
-    }
-    
-    .cricle .fa-heart {
-        transform: scale(0.7);
-    }
-    
-    /* Name adjustments */
-    .name span {
-        font-size: 1.2rem;
-    }
-    
-    /* Date of birth adjustments */
-    .date__of__birth span {
-        font-size: 0.9rem;
-        margin: 0 20px;
-    }
-    
-    .date__of__birth {
-        width: 250px !important;
-        height: 40px !important;
-    }
-    
-    /* Button adjustments */
-    #btn__letter {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-    }
-    
-    .music-toggle {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-    }
-    
-    /* Balloon adjustments */
-    .balloon_one, 
-    .balloon_two {
-        transform: scale(0.8);
-    }
-    
-    /* Hat adjustments */
-    .title .hat img {
-        width: 100px;
-    }
-    
-    .title .hat {
-        right: 20px;
-        top: -250px;
-    }
-    
-    /* Flag adjustments */
-    .flag__birthday .flag__left, 
-    .flag__birthday .flag__right {
-        width: 200px;
-    }
-    
-    /* Box mail adjustments */
-    .boxMail {
-        width: 95%;
-        height: 90%;
-    }
-    
-    .boxMail-container {
-        flex-direction: column;
-    }
-    
-    .card1, .card2 {
-        width: 100%;
-        height: auto;
-        min-height: 50%;
-    }
-    
-    .card1 {
-        border-right: none;
-        border-bottom: 2px dashed var(--color-border);
-    }
-    
-    .userImg {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .username {
-        font-size: 1rem;
-    }
-    
-    .card1 h3 {
-        font-size: 1.5rem;
-    }
-    
-    .card2-content h3 {
-        font-size: 1.2rem;
-    }
-    
-    .card2-content h2 {
-        font-size: 1rem;
-    }
-    
-    .imageCute, .imageCute2 {
-        height: 150px;
-    }
-    
-    /* New sections adjustments */
-    .new-sections {
-        padding: 20px 10px;
-    }
-    
-    .new-sections > section {
-        padding: 20px 15px;
-        margin: 20px 0;
-    }
-    
-    .new-sections > section h2 {
-        font-size: 1.5rem;
-    }
-    
-    /* Prescription section */
-    .prescription-header h2 {
-        font-size: 1.5rem;
-    }
-    
-    .prescription-body p {
-        font-size: 0.9rem;
-    }
-    
-    .prescription-pad {
-        padding: 15px;
-    }
-    
-    /* Diagnosis section */
-    .diagnosis-title {
-        font-size: 1.3rem;
-    }
-    
-    .symptoms h3, 
-    .prognosis h3 {
-        font-size: 1.1rem;
-    }
-    
-    .symptoms li {
-        font-size: 0.9rem;
-    }
-    
-    .prognosis p {
-        font-size: 0.9rem;
-        padding: 10px;
-    }
-    
-    /* Timeline adjustments */
-    .timeline:before, 
-    .coffee-timeline:before {
-        left: 20px;
-    }
-    
-    .timeline-item:nth-child(odd), 
-    .coffee-item:nth-child(odd),
-    .timeline-item:nth-child(even), 
-    .coffee-item:nth-child(even) {
-        padding-left: 50px;
-        padding-right: 15px;
-        text-align: left;
-    }
-    
-    .timeline-icon, 
-    .coffee-icon {
-        left: 5px;
-        width: 40px;
-        height: 40px;
-        margin-left: -20px;
-    }
-    
-    .timeline-content, 
-    .coffee-content {
-        padding: 15px;
-    }
-    
-    .timeline-content h3, 
-    .coffee-content h3 {
-        font-size: 1rem;
-    }
-    
-    .timeline-content p, 
-    .coffee-content p {
-        font-size: 0.9rem;
-    }
-    
-    /* Surprise boxes */
-    .surprise-container {
-        gap: 20px;
-    }
-    
-    .surprise-box {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .surprise-front i, 
-    .surprise-back i {
-        font-size: 2.5rem;
-    }
-    
-    .surprise-front p, 
-    .surprise-back p {
-        font-size: 0.9rem;
-    }
-    
-    /* Self-care section */
-    .selfcare-card {
         padding: 20px;
+        max-width: 1200px;
     }
     
-    .selfcare-card h2 {
-        font-size: 1.3rem;
-    }
-    
-    .selfcare-card p {
-        font-size: 1rem;
-    }
-    
-    .motivation-button {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-    
-    /* Vision board */
-    .vision-board {
-        gap: 15px;
-    }
-    
-    .vision-item {
-        width: 100px;
-        padding: 15px 10px;
-    }
-    
-    .vision-item i {
-        font-size: 1.5rem;
-    }
-    
-    .vision-item p {
-        font-size: 0.9rem;
-    }
-    
-    /* Letters section */
-    .letters-container {
-        gap: 20px;
-    }
-    
-    .letter {
-        width: 150px;
-        height: 200px;
-    }
-    
-    .letter-front p, 
-    .letter-content {
-        font-size: 0.8rem;
-    }
-    
-    /* Gifts section */
-    .gifts-container {
-        gap: 20px;
-    }
-    
-    .gift-box {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .gift-base {
-        height: 100px;
-    }
-    
-    .gift-content {
-        font-size: 0.7rem;
-    }
-    
-    /* Confetti button */
-    .confetti-btn {
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-    
-    .confetti-btn i {
-        font-size: 1rem;
-    }
-    
-    /* Decorations */
-    .decorate_star.star1 {
-        width: 15px;
-        height: 15px;
-        top: 50px;
-        left: 200px;
-    }
-    
-    .decorate_star.star2 {
-        width: 12px;
-        height: 15px;
-        top: 20px;
-        right: 200px;
-    }
-    
-    .decorate_star.star3 {
-        width: 10px;
-        height: 10px;
-        top: 200px;
-        left: 400px;
-    }
-    
-    .decorate_star.star4 {
-        width: 14px;
-        height: 14px;
-        bottom: 40px;
-        left: 20px;
-    }
-    
-    .decorate_star.star5 {
-        width: 12px;
-        height: 14px;
-        bottom: 100px;
-        left: 300px;
-    }
-    
-    .decorate_flower--one {
-        top: 180px;
-        left: 30px;
-    }
-    
-    .decorate_flower--two {
-        top: 150px;
-        left: 300px;
-    }
-    
-    .decorate_flower--three {
-        top: 100px;
-        right: 150px;
-    }
-    
-    .decorate_bottom img {
-        width: 80px;
-    }
-    
-    .smiley__icon img {
-        width: 80px;
-    }
-}
-
-/* Tablet Styles */
-@media screen and (min-width: 576px) and (max-width: 768px) {
-    /* Content adjustments */
     .content {
-        flex-direction: column;
-        padding-top: 1.5rem;
+        flex-direction: row;
+        padding-top: 3rem;
     }
     
     .content .left, 
     .content .right {
-        width: 100%;
-        min-width: unset;
-        padding: 0;
-    }
-    
-    /* Title adjustments */
-    .title {
-        font-size: 2rem;
-    }
-    
-    /* Image adjustments */
-    .content .right .image {
-        width: 300px;
-        height: 300px;
-    }
-    
-    /* Circle text adjustments */
-    .text__cricle {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .text__cricle span {
-        transform-origin: 0 35px;
-        font-size: 0.6rem;
-    }
-    
-    /* Name adjustments */
-    .name span {
-        font-size: 1.4rem;
-    }
-    
-    /* Date of birth adjustments */
-    .date__of__birth span {
-        font-size: 1rem;
-    }
-    
-    /* Box mail adjustments */
-    .boxMail {
-        width: 90%;
-        height: 85%;
-    }
-    
-    /* New sections adjustments */
-    .new-sections > section h2 {
-        font-size: 1.8rem;
-    }
-    
-    /* Timeline adjustments */
-    .timeline:before, 
-    .coffee-timeline:before {
-        left: 25px;
-    }
-    
-    .timeline-item:nth-child(odd), 
-    .coffee-item:nth-child(odd),
-    .timeline-item:nth-child(even), 
-    .coffee-item:nth-child(even) {
-        padding-left: 60px;
-        padding-right: 20px;
-    }
-    
-    .timeline-icon, 
-    .coffee-icon {
-        width: 45px;
-        height: 45px;
-        margin-left: -22.5px;
-    }
-    
-    /* Surprise boxes */
-    .surprise-box {
-        width: 180px;
-        height: 180px;
-    }
-    
-    /* Vision board */
-    .vision-item {
-        width: 120px;
-    }
-    
-    /* Letters section */
-    .letter {
-        width: 180px;
-        height: 230px;
-    }
-    
-    /* Gifts section */
-    .gift-box {
-        width: 140px;
-        height: 140px;
-    }
-    
-    .gift-base {
-        height: 110px;
-    }
-}
-
-/* Small Desktop Styles */
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-    /* Wrapper adjustments */
-    #wrapper {
-        max-width: 900px;
-    }
-    
-    /* Content adjustments */
-    .content .left {
-        width: 45%;
-        min-width: 350px;
-    }
-    
-    .content .right {
-        width: 55%;
-        min-width: 400px;
-    }
-    
-    /* Image adjustments */
-    .content .right .image {
-        width: 350px;
-        height: 350px;
-    }
-    
-    /* Circle text adjustments */
-    .text__cricle {
-        width: 90px;
-        height: 90px;
-    }
-    
-    .text__cricle span {
-        transform-origin: 0 40px;
-        font-size: 0.65rem;
-    }
-    
-    /* Box mail adjustments */
-    .boxMail {
-        width: 85%;
-        height: 80%;
-    }
-    
-    /* New sections adjustments */
-    .new-sections {
-        max-width: 800px;
-    }
-}
-
-/* Large Desktop Styles */
-@media screen and (min-width: 1024px) {
-    /* Wrapper adjustments */
-    #wrapper {
-        max-width: 1200px;
-        padding: 30px;
-    }
-    
-    /* Content adjustments */
-    .content {
-        padding-top: 3rem;
-        justify-content: space-between;
+        padding: 0 20px;
     }
     
     .content .left {
         width: 40%;
         min-width: 400px;
-        padding-right: 20px;
     }
     
     .content .right {
         width: 60%;
         min-width: 500px;
-        padding-left: 20px;
     }
     
-    /* Title adjustments */
     .title {
         font-size: 3rem;
     }
     
-    /* Image adjustments */
     .content .right .image {
-        width: 450px;
-        height: 450px;
+        width: 400px;
+        height: 400px;
     }
     
-    /* Circle text adjustments */
     .text__cricle {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     
     .text__cricle span {
-        transform-origin: 0 55px;
-        font-size: 0.8rem;
+        transform-origin: 0 45px;
+        font-size: 0.7rem;
     }
     
-    /* Box mail adjustments */
+    .name span {
+        font-size: 1.7rem;
+    }
+    
+    .date__of__birth span {
+        font-size: 1.2rem;
+    }
+    
     .boxMail {
         width: 80%;
-        height: 80%;
         max-width: 800px;
+        height: 80%;
     }
     
-    /* New sections adjustments */
+    .boxMail-container {
+        flex-direction: row;
+    }
+    
+    .card1, .card2 {
+        height: 100%;
+    }
+    
+    .card1 {
+        width: 40%;
+    }
+    
+    .card2 {
+        width: 60%;
+    }
+    
+    .card1 {
+        border-right: 2px dashed var(--color-border);
+        border-bottom: none;
+    }
+    
+    .userImg {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .username {
+        font-size: 1.2rem;
+    }
+    
+    .card1 h3 {
+        font-size: 2rem;
+    }
+    
+    .card2-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .card2-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .imageCute, .imageCute2 {
+        height: 200px;
+    }
+    
     .new-sections {
-        max-width: 1000px;
-        margin-top: 30px;
+        padding: 50px 20px;
     }
     
     .new-sections > section {
-        padding: 40px;
+        padding: 30px;
+        margin: 40px 0;
     }
     
     .new-sections > section h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-    
-    /* Timeline adjustments */
-    .timeline:before, 
-    .coffee-timeline:before {
-        left: 50%;
-        margin-left: -2px;
-    }
-    
-    .timeline-item:nth-child(odd), 
-    .coffee-item:nth-child(odd) {
-        padding-right: calc(50% + 30px);
-        text-align: right;
-        padding-left: 0;
-    }
-    
-    .timeline-item:nth-child(even), 
-    .coffee-item:nth-child(even) {
-        padding-left: calc(50% + 30px);
-        text-align: left;
-        padding-right: 0;
-    }
-    
-    .timeline-icon, 
-    .coffee-icon {
-        left: 50%;
-        margin-left: -25px;
-    }
-    
-    /* Surprise boxes */
-    .surprise-box {
-        width: 220px;
-        height: 220px;
-    }
-    
-    /* Vision board */
-    .vision-board {
-        gap: 30px;
-    }
-    
-    .vision-item {
-        width: 150px;
-    }
-    
-    /* Letters section */
-    .letter {
-        width: 200px;
-        height: 250px;
-    }
-    
-    /* Gifts section */
-    .gift-box {
-        width: 160px;
-        height: 160px;
-    }
-    
-    .gift-base {
-        height: 130px;
-    }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    /* Use desktop styles for tablet consistency */
+    /* Keep consistent layout across all devices */
+}
+
+/* Small Desktop Styles */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    /* Use desktop styles for small desktop consistency */
+    /* Keep consistent layout across all devices */
+}
+
+/* Large Desktop Styles */
+@media screen and (min-width: 1024px) {
+    /* Desktop styles - this will be the base design for all devices */
+    /* Keep consistent layout across all devices */
 }
 
 /* Extra Large Screens */
 @media screen and (min-width: 1200px) {
-    /* Wrapper adjustments */
-    #wrapper {
-        max-width: 1400px;
-    }
-    
-    /* Content adjustments */
-    .content .left {
-        min-width: 450px;
-    }
-    
-    .content .right {
-        min-width: 550px;
-    }
-    
-    /* Image adjustments */
-    .content .right .image {
-        width: 500px;
-        height: 500px;
-    }
-    
-    /* Circle text adjustments */
-    .text__cricle {
-        width: 130px;
-        height: 130px;
-    }
-    
-    .text__cricle span {
-        transform-origin: 0 60px;
-        font-size: 0.9rem;
-    }
-    
-    /* Box mail adjustments */
-    .boxMail {
-        max-width: 900px;
-    }
-    
-    /* New sections adjustments */
-    .new-sections {
-        max-width: 1200px;
-    }
-    
-    .new-sections > section {
-        padding: 50px;
-    }
+    /* Enhanced desktop styles */
+    /* Keep consistent layout across all devices */
 }
 
 /* Ultra Wide Screens */
 @media screen and (min-width: 1400px) {
-    /* Wrapper adjustments */
-    #wrapper {
-        max-width: 1600px;
-    }
-    
-    /* Content adjustments */
-    .content .left {
-        min-width: 500px;
-    }
-    
-    .content .right {
-        min-width: 600px;
-    }
-    
-    /* Image adjustments */
-    .content .right .image {
-        width: 550px;
-        height: 550px;
-    }
+    /* Ultra wide desktop styles */
+    /* Keep consistent layout across all devices */
 }
